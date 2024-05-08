@@ -1,41 +1,43 @@
 ## 2. 
 
-### ```-v```
+### ```-w```
 
-```-v``` inverse looksup the term(gets everthing but the term we are looking for)
-Source: Google Gemini
-Prompt used: Can u explain what -v is? and provide a few examples using it?
+```-w``` look for the entire word in the pattern
+Source: https://phoenixnap.com/kb/grep-command-linux-unix-examples
 
-Response:
-The -v option with grep is used to invert the search. Instead of showing lines that contain your search pattern, it shows lines that do not contain the pattern.
 
-Here are some examples using -v:
-
-Finding non-empty files:
-grep -v '^$' *  # This will find all files except those that are empty (denoted by ^$ which matches a line containing only whitespace)
-Listing files without a specific extension:
-grep -v '\.txt$' file_list.txt  # This will list all files in the file_list.txt that doesn't end with .txt
-
-I modified it as such
-
-```$ grep -v '[a-zA-z]' biomed/*.txt | head -10```
+```
+$ grep -w 'amylase' biomed/*.txt | head -10
+```
+```
+biomed/1471-2229-2-3.txt:        generated off an α amylase gene exhibit differential
+biomed/1471-2229-2-4.txt:        metabolism, the regulation of alpha-amylase activity has
+biomed/1471-2229-2-4.txt:        regulation of alpha-amylase expression [ 26 ] . Sugar
+biomed/1471-2229-2-4.txt:        regulation of alpha-amylase expression has also been shown
+biomed/1471-2229-2-4.txt:        alpha-amylase transcript levels [ 24 25 ] , but also mRNA
+biomed/1471-2229-2-4.txt:        signaling pathways in the control of alpha-amylase
+biomed/1471-2229-2-4.txt:        gibberellin-dependent pathway for alpha-amylase expression
+biomed/1471-2229-2-4.txt:        a role in sugar repression of alpha-amylase activity. This
+biomed/1471-2229-2-4.txt:        alpha-amylase expression [ 37 ] . However, the role of
+biomed/1471-2229-2-4.txt:        genes encoding patatin [ 41 ] , beta-amylase [ 42 43 ] ,
 ```
 
 ```
+grep -w 'process' 911report/*.txt | head -10
+```
+```
+911report/chapter-10.txt:            The very process of reviewing these issues underscored the absence of an effective
+911report/chapter-10.txt:                enforcement officials, who were following up on other leads. The clearance process
+911report/chapter-11.txt:                process did not set, requirements to monitor such telltale indicators. Therefore the
+911report/chapter-11.txt:                administrations. Each president considered or authorized covert actions, a process
+911report/chapter-11.txt:                NSC-led interagency process did not effectively bring along the leadership of the
+911report/chapter-12.txt:                themselves. The United States must support such developments. But this process is
+911report/chapter-12.txt:                likely to be measured in decades, not years. It is a process that will be violently
+911report/chapter-12.txt:                    rule at the national level, although that turbulent process does continue to
+911report/chapter-12.txt:                    that process.
+911report/chapter-12.txt:                strategies to promote the Middle East peace process. In each country, political
+```
 
-```$ grep -r -v 'police' 911report/*.txt | head -10```
-```
-911report/chapter-1.txt:
-911report/chapter-1.txt:
-911report/chapter-1.txt:
-911report/chapter-1.txt:"WE HAVE SOME PLANES"
-911report/chapter-1.txt:
-911report/chapter-1.txt:    Tuesday, September 11, 2001, dawned temperate and nearly cloudless in the eastern United States. Millions of men and women readied themselves for work. Some made their way to the Twin Towers, the signature structures of the World Trade Center complex in New York City. Others went to Arlington, Virginia, to the Pentagon. Across the Potomac River, the United States Congress was back in session. At the other end of Pennsylvania Avenue, people began to line up for a White House tour. In Sarasota, Florida, President George W. Bush went for an early morning run.
-911report/chapter-1.txt:
-911report/chapter-1.txt:    For those heading to an airport, weather conditions could not have been better for a safe and pleasant journey. Among the travelers were Mohamed Atta and Abdul Aziz al Omari, who arrived at the airport in Portland, Maine.
-911report/chapter-1.txt:
-911report/chapter-1.txt:INSIDE THE FOUR FLIGHTS
-```
 
 ### ```-A```
 
