@@ -154,7 +154,7 @@ This command looks for lines containing patterns like "Name-number" (e.g., "isop
 22786     1
 ```
 This command searches for the number of occurrences of the string pattern ```CIA``` within all files recursively in the government directory and its subdirectories. It then uses sum to add up the individual counts from each file and provide the total number of ```CIA``` mentions across all files.
-It can be useful if we can visualize instances of CIA being mentioned and its roles/significance in the government records.
+It can be useful if we can visualize instances of CIA being mentioned and its roles/significance in the government records without getting bombarded by a bunch of textfile names.
 
 
 ```$ grep -h "3-2" biomed/*.txt | sum```
@@ -162,5 +162,5 @@ It can be useful if we can visualize instances of CIA being mentioned and its ro
 32610     2
 ```
 This command searches for the number of occurrences of the string pattern ```3-2``` within all text files in biomed directory. It then uses sum to add up the individual counts from each file and provide the total number of ```3-2``` mentions across all files.
-It can be useful if we can visualize instances of 3-2, which can be a date, being mentioned and its roles/significance in the biomed publication.
+It can be useful if we can visualize instances of 3-2, which can be a date, being mentioned and its roles/significance in the biomed publication without getting bombarded by a bunch of textfile names.
 
