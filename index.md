@@ -54,18 +54,25 @@ biomed/1471-2091-4-1.txt:          Microcon-100 (Amicon). The reaction mixtures 
 biomed/1471-2121-3-8.txt:        sequences are Gly-247, Gly-284 and Cys-450 in our Hyal-1
 ```
 
+
+```-h``` surpresses/hides the filenames in the output
+```-c``` counts the number of matches in file
+
 ```$ grep -r -hc "CIA" government | sum```
 ```
 22786     1
 ```
-```22786```: This represents the total number of lines containing the text "CIA" found across all files within the directory named "government" recursivelyy ```-r```
+This command searches for the number of occurrences of the string pattern "CIA"(using enhanced within all files recursively in the government directory and its subdirectories. It then uses sum to add up the individual counts from each file and provide the total number of "CIA" mentions across all files.
 
-```1```: This number indicates that there's only one directory that contains at least one file with a match for "CIA".
+```22786```: This represents the total number of lines containing the text "CIA" found across all files within the directory named "government" recursivelyy ```-r```
+```1```: Only one directory that contains at least one file with a match for "CIA".
 
 
 ```$ grep -hc "3-2" biomed/*.txt | sum```
 ```
 32610     2
 ```
-32610: The total number of lines containing the search pattern ("3-2") across all files in the specified directory.
-2: This could be the number of files that actually contain at least one instance of the pattern.
+This command searches for the number of occurrences of the string pattern "3-2" within all text files in biomed directory. It then uses sum to add up the individual counts from each file and provide the total number of 3-2" mentions across all files.
+
+```32610```: The total number of lines containing the search pattern ("3-2") across all files in the specified directory.
+```2```: The number of files that actually contain at least one instance of the pattern.
