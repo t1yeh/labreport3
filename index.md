@@ -51,7 +51,7 @@ public void testReverseInPlace() {
 
 ###  whut i did
 
-It iterates only through the first half of the array and performs a swap operation with the mirroed othersize: For each element at index i, it finds its "mirror" element on the opposite side of the array by calculating array.length - i - 1 and swaps it. Its similar to the original faulty code, just that the one side is properly swapped over this time.
+It iterates only through the first half of the array and performs a swap operation with the mirroed othersize: For each element at index i, it finds its "mirror" element on the opposite side of the array by calculating ```array.length - i - 1``` and swaps it. Its similar to the original faulty code, just that the one side is properly swapped over this time.
 
 ## 2. 
 
@@ -76,7 +76,7 @@ biomed/1471-2121-3-21.txt:          microscopic images. Thirty-two fluorescence 
 biomed/1471-2121-3-4.txt:          For microscopic observation, cells were plated in
 biomed/1471-2121-3-6.txt:          fluorescence microscopic observation immediately before
 ```
-This command searches for "amylase" as a complete word in text files of the biomed directory (.txt) and shows the first 10 lines. This can be helpful if we are looking for a specific biological compound.(lots of bio terminology uses word componding like Pneumonoultra```microscopic```silicovolcanoconiosis)
+This command searches for "amylase" as a complete word in text files of the ```biomed``` directory and shows the first 10 lines. This can be helpful if we are looking for a specific biological compound.(lots of bio terminology uses word componding like Pneumonoultra```microscopic```silicovolcanoconiosis)
 
 ```
 grep -w 'process' 911report/*.txt | head -10
@@ -93,11 +93,11 @@ grep -w 'process' 911report/*.txt | head -10
 911report/chapter-12.txt:                    that process.
 911report/chapter-12.txt:                strategies to promote the Middle East peace process. In each country, political
 ```
-This command searches for the word "process" used in the text files of 911report and displays first 10 lines. This can be helpful if we are looking at certainn technical terms where it can also be conjugated, especially in analytical documents such as reports.
+This command searches for the word "process" used in the text files of ```911report``` and displays first 10 lines. This can be helpful if we are looking at certainn technical terms where it can also be conjugated, especially in analytical documents such as reports.
 
 ### ```-A```
 
-'''-A #''' finds the # of lines after a certain pattern
+```-A``` finds the # of lines after a certain pattern
 Source: https://www.cyberciti.biz/faq/grep-in-bash/
 
 ```$ grep -A 2 "police" 911report/*.txt | head -5```
@@ -108,7 +108,7 @@ Source: https://www.cyberciti.biz/faq/grep-in-bash/
 --
 911report/chapter-11.txt:                officials-local airport managers and local police departments- who had not seen such
 ```
-This command searches for the word "police", and displays the line containing "police" along with the two lines following it in all files ending in .txt within the 911report directory, and showing the first 5 results. This can be useful if we are looking at the context before the usage of police in the 911reports
+This command searches for the word "police", and displays the line containing "police" along with the two lines following it in all files ending in ```.txt``` within the ```911report``` directory, and showing the first 5 results. This can be useful if we are looking at the context before the usage of police in the ```911reports```
 
 
 ```$ grep -A 1 "CIA" 911report/*.txt | head -5```
@@ -119,7 +119,7 @@ This command searches for the word "police", and displays the line containing "p
 911report/chapter-10.txt:                proposed inserting CIA teams into Afghanistan to work with Afghan warlords who would
 911report/chapter-10.txt:                join the fight against al Qaeda.46These CIA teams would act jointly with the
 ```
-This command searches for the term "CIA" in all txt files in the 911report directory, shows the line containing "CIA" and the line following it, and showing the first 5 results. This can be helpful if we are also looking at the direct context before CIA being mentioned in the 911attacks
+This command searches for the term "CIA" in all txt files in the ```911report``` directory, shows the line containing "CIA" and the line following it, and showing the first 5 results. This can be helpful if we are also looking at the direct context before CIA being mentioned in the 911attacks
 
 ### ```-h```
 
@@ -141,7 +141,7 @@ TO AUDIT OFFICIALS AND OTHERS INTERESTED IN GOVERNMENT AUDITING
 FINANCIAL AUDITS
 FIELD WORK STANDARDS FOR FINANCIAL AUDITS
 ```
-This command searches for the ocurrences of the string pattern ```CIA``` of all files recursively in the government directory and its subdirectories and displays the top 10. 
+This command searches for the ocurrences of the string pattern CIA of all files recursively in the ```government``` directory and its subdirectories and displays the top 10. 
 It can be useful if we can visualize instances of CIA being mentioned and its roles/significance in the government records without getting bombarded by a bunch of textfile names.
 
 
@@ -158,8 +158,8 @@ It can be useful if we can visualize instances of CIA being mentioned and its ro
         (NT_017021) of 6p21.3-22. Our 
         B:9-23 or B:13-23 [ 15 ] . However, in the Liu
 ```
-This command searches for the occurrences of the string pattern ```3-2``` of all text files in biomed directory and displays the top 10.
-It can be useful if we can visualize instances of 3-2, which can be a date, being mentioned and its roles/significance in the biomed publication without getting bombarded by a bunch of textfile names.
+This command searches for the occurrences of the string pattern 3-2 of all text files in ```biomed``` directory and displays the top 10.
+It can be useful if we can visualize instances of 3-2, which can be a date, being mentioned and its roles/significance in the biomedical publication without getting bombarded by a bunch of textfile names.
 
 ### ```-E``` 
 
@@ -174,7 +174,7 @@ Source: https://www.cyberciti.biz/faq/grep-in-bash/
 911report/chapter-1.txt:    About 20 minutes later, at 7:35, another passenger for Flight 77, Hani Hanjour, placed two carry-on bags on the X-ray belt in the Main Terminal's west checkpoint, and proceeded, without alarm, through the metal detector. A short time later, Nawaf and Salem al Hazmi entered the same checkpoint. Salem al Hazmi cleared the metal detector and was permitted through; Nawaf al Hazmi set off the alarms for both the first and second metal detectors and was then hand-wanded before being passed. In addition, his over-the-shoulder carry-on bag was swiped by an explosive trace detector and then passed. The video footage indicates that he was carrying an unidentified item in his back pocket, clipped to its rim.
 911report/chapter-1.txt:    Newark: United 93. Between 7:03 and 7:39, Saeed al Ghamdi, Ahmed al Nami, Ahmad al Haznawi, and Ziad Jarrah checked in at the United Airlines ticket counter for Flight 93, going to Los Angeles. Two checked bags; two did not. Haznawi was selected by CAPPS. His checked bag was screened for explosives and then loaded on the plane.
 ```
-This command searches text files in the directory "911report" for lines containing "Flight" followed by exactly two digits, and displays the first 5 lines found. This can be helpful if we are looking for the specifics going on each flight involved in the 911 attacks.
+This command searches text files in the directory ```911report``` for lines containing "Flight" followed by exactly two digits, and displays the first 5 lines found. This can be helpful if we are looking for the specifics going on each flight involved in the 911 attacks.
 
 ```$ grep -E "([A-Z][a-z]{2,})-[0-9]{3,}" biomed/*.txt | head -5```
 ```
@@ -184,4 +184,4 @@ biomed/1471-2091-2-10.txt:          no Alexa-488-conjugated antibodies were adde
 biomed/1471-2091-4-1.txt:          Microcon-100 (Amicon). The reaction mixtures were diluted
 biomed/1471-2121-3-8.txt:        sequences are Gly-247, Gly-284 and Cys-450 in our Hyal-1
 ```
-This command looks for lines containing patterns like "Name-number" (e.g., "isopropyl-1234") within text files in biomed within the "biomed" directory,  and then displays the first 5 lines found. This can be helpful if we are looking/gathering specific compound names in that format. 
+This command looks for lines containing patterns like "Name-number" (e.g., "isopropyl-1234") within text files in biomed within the ```biomed``` directory,  and then displays the first 5 lines found. This can be helpful if we are looking/gathering specific compound names in that format. 
