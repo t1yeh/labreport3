@@ -1,5 +1,5 @@
 ## 1.
-###Failure inducing input
+### Failure inducing input
 
 ```
 @Test 
@@ -21,8 +21,37 @@
 ```
 
 ### running both 
-![image](runningboth)
+![image](image_2024-05-08_165540753.png)
 
+### before and after
+
+#### Before
+
+```
+  // Changes the input array to be in reversed order
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
+
+#### Fixed Code:
+
+```
+  // Changes the input array to be in reversed order
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length / 2; i += 1) {
+      int toSwap = arr[i];
+      arr[i] = arr[arr.length - i - 1];
+      arr[arr.length - i - 1] = toSwap;
+    }
+  }
+```
+
+###  whut i did
+
+It iterates only through the first half of the array and performs a swap operation with the mirroed othersize: For each element at index i, it finds its "mirror" element on the opposite side of the array by calculating array.length - i - 1 and swaps it. Its similar to the original faulty code, just that the one side is properly swapped over this time.
 
 ## 2. 
 
