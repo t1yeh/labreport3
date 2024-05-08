@@ -149,18 +149,38 @@ This command looks for lines containing patterns like "Name-number" (e.g., "isop
 
 ```-h``` surpresses/hides the filenames in the output
 
-```$ grep -r -h "CIA" government | sum```
 ```
-22786     1
+$ grep -r -h "CIA" government | head -10
 ```
-This command searches for the number of occurrences of the string pattern ```CIA``` within all files recursively in the government directory and its subdirectories. It then uses sum to add up the individual counts from each file and provide the total number of ```CIA``` mentions across all files.
+```
+farmworker legal services. AMERICAN BAR ASSOCIATION, STUDY
+A SPECIAL REPORT to CONGRESS�APRIL 30, 2000
+COMMERCIAL SUPPLIERS
+9.4.1 ROLE OF THE STATISTICIAN
+TABLE 3. PREPARATION OF GP2 ARTIFICIAL SEAWATER USING REAGENT
+9.4.1 ROLE OF THE STATISTICIAN
+ANALYSIS OF THE SEA URCHIN, ARBACIA PUNCTULATA,
+TO AUDIT OFFICIALS AND OTHERS INTERESTED IN GOVERNMENT AUDITING
+FINANCIAL AUDITS
+FIELD WORK STANDARDS FOR FINANCIAL AUDITS
+```
+This command searches for the ocurrences of the string pattern ```CIA``` of all files recursively in the government directory and its subdirectories and displays the top 10. 
 It can be useful if we can visualize instances of CIA being mentioned and its roles/significance in the government records without getting bombarded by a bunch of textfile names.
 
 
-```$ grep -h "3-2" biomed/*.txt | sum```
+```$ grep -h "3-2" biomed/*.txt | head -10```
 ```
-32610     2
+          those with HF vs. 23-25% of those without; 
+          column at either 4°C or room temperature (23-25°C).
+          (amino acids 143-213 & 1266-1417, Figure 2) that
+          interact with TOPIIIα. One of these regions (143-213) is
+          Rab24 [ 24 ] fused to residues 163-201 from Rab1B [ 80 ]
+          163-201 of Rab1B; Rab1B/Rab24, consisting of residues
+          1993-2002. PHYLIP (Phylogeny Inference Package) version
+          trp 1-190 leu2-3, 112 ura3-52 his3-200
+        (NT_017021) of 6p21.3-22. Our 
+        B:9-23 or B:13-23 [ 15 ] . However, in the Liu
 ```
-This command searches for the number of occurrences of the string pattern ```3-2``` within all text files in biomed directory. It then uses sum to add up the individual counts from each file and provide the total number of ```3-2``` mentions across all files.
+This command searches for the occurrences of the string pattern ```3-2``` of all text files in biomed directory and displays the top 10.
 It can be useful if we can visualize instances of 3-2, which can be a date, being mentioned and its roles/significance in the biomed publication without getting bombarded by a bunch of textfile names.
 
