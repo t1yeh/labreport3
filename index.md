@@ -1,6 +1,22 @@
 ## 2. 
 
+### ```-v```
 
+```-v``` inverse looksup the term(gets everthing but the term we are looking for)
+Source: Google Gemini
+Prompt used: Can u explain what -v is? and provide a few examples using it?
+
+Response:
+The -v option with grep is used to invert the search. Instead of showing lines that contain your search pattern, it shows lines that do not contain the pattern.
+
+Here are some examples using -v:
+
+Finding non-empty files:
+grep -v '^$' *  # This will find all files except those that are empty (denoted by ^$ which matches a line containing only whitespace)
+Listing files without a specific extension:
+grep -v '\.txt$' file_list.txt  # This will list all files in the file_list.txt that doesn't end with .txt
+
+I modified it as such
 
 ```$ grep -v '[a-zA-z]' biomed/*.txt | head -10```
 ```
@@ -24,6 +40,7 @@
 ### ```-A```
 
 '''-A #''' finds the # of lines after a certain pattern
+Source: https://www.cyberciti.biz/faq/grep-in-bash/
 
 ```$ grep -A 2 "police" 911report/*.txt | head -5```
 ```
@@ -44,10 +61,12 @@ This command searches for the word "police", and displays the line containing "p
 911report/chapter-10.txt:                proposed inserting CIA teams into Afghanistan to work with Afghan warlords who would
 911report/chapter-10.txt:                join the fight against al Qaeda.46These CIA teams would act jointly with the
 ```
-This command searches for the term "CIA" in all txt files in the 911report directory, shows the line containing "CIA" and the line following it, and displays only the first 5 results. This can be helpful if we are also looking at the direct context before CIA being mentioned in the 911attacks
+This command searches for the term "CIA" in all txt files in the 911report directory, shows the line containing "CIA" and the line following it, and showing the first 5 results. This can be helpful if we are also looking at the direct context before CIA being mentioned in the 911attacks
 
-### ```-E```
+### ```-E``` 
+
 ```-E```  allows you to specify the search pattern you want to find in the text files.
+Source: https://www.cyberciti.biz/faq/grep-in-bash/
 
 ```$ grep -E "Flight [0-9]{2}" 911report/*.txt | head -5```
 ```
@@ -77,7 +96,7 @@ This command looks for lines containing patterns like "Name-number" (e.g., "isop
 ```
 22786     1
 ```
-This command searches for the number of occurrences of the string pattern ```CIA```(using enhanced within all files recursively in the government directory and its subdirectories. It then uses sum to add up the individual counts from each file and provide the total number of ```CIA``` mentions across all files.
+This command searches for the number of occurrences of the string pattern ```CIA``` within all files recursively in the government directory and its subdirectories. It then uses sum to add up the individual counts from each file and provide the total number of ```CIA``` mentions across all files.
 It can be useful if we can visualize instances of CIA being mentioned and its roles/significance in the government records.
 
 ```22786```: This represents the total number of lines containing the text ```CIA``` found across all files within the directory named "government" recursivelyy ```-r```
