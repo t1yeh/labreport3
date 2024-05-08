@@ -35,6 +35,8 @@
 911report/chapter-10.txt:                join the fight against al Qaeda.46These CIA teams would act jointly with the
 ```
 
+### ```-E```
+```-E```  allows you to specify the search pattern you want to find in the text files.
 
 ```$ grep -E "Flight [0-9]{2}" 911report/*.txt | head -5```
 ```
@@ -44,6 +46,7 @@
 911report/chapter-1.txt:    About 20 minutes later, at 7:35, another passenger for Flight 77, Hani Hanjour, placed two carry-on bags on the X-ray belt in the Main Terminal's west checkpoint, and proceeded, without alarm, through the metal detector. A short time later, Nawaf and Salem al Hazmi entered the same checkpoint. Salem al Hazmi cleared the metal detector and was permitted through; Nawaf al Hazmi set off the alarms for both the first and second metal detectors and was then hand-wanded before being passed. In addition, his over-the-shoulder carry-on bag was swiped by an explosive trace detector and then passed. The video footage indicates that he was carrying an unidentified item in his back pocket, clipped to its rim.
 911report/chapter-1.txt:    Newark: United 93. Between 7:03 and 7:39, Saeed al Ghamdi, Ahmed al Nami, Ahmad al Haznawi, and Ziad Jarrah checked in at the United Airlines ticket counter for Flight 93, going to Los Angeles. Two checked bags; two did not. Haznawi was selected by CAPPS. His checked bag was screened for explosives and then loaded on the plane.
 ```
+This command searches text files in the directory "911report" for lines containing "Flight" followed by exactly two digits, and displays the first 5 lines found. This can be helpful if we are looking for the specifics going on each flight involved in the 911 attacks.
 
 ```$ grep -E "([A-Z][a-z]{2,})-[0-9]{3,}" biomed/*.txt | head -5```
 ```
@@ -53,7 +56,8 @@ biomed/1471-2091-2-10.txt:          no Alexa-488-conjugated antibodies were adde
 biomed/1471-2091-4-1.txt:          Microcon-100 (Amicon). The reaction mixtures were diluted
 biomed/1471-2121-3-8.txt:        sequences are Gly-247, Gly-284 and Cys-450 in our Hyal-1
 ```
-
+This command looks for lines containing patterns like "Name-number" (e.g., "isopropyl-1234") within text files in biomed within the "biomed" directory,  and then displays the first 5 lines found. This can be helpful if we are looking/gathering specific compound names in that format. 
+### ```-hc```
 
 ```-h``` surpresses/hides the filenames in the output
 ```-c``` counts the number of matches in file
