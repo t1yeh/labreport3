@@ -121,33 +121,10 @@ This command searches for the word "police", and displays the line containing "p
 ```
 This command searches for the term "CIA" in all txt files in the 911report directory, shows the line containing "CIA" and the line following it, and showing the first 5 results. This can be helpful if we are also looking at the direct context before CIA being mentioned in the 911attacks
 
-### ```-E``` 
-
-```-E```  allows you to specify the search pattern you want to find in the text files.
-Source: https://www.cyberciti.biz/faq/grep-in-bash/
-
-```$ grep -E "Flight [0-9]{2}" 911report/*.txt | head -5```
-```
-911report/chapter-1.txt:    Between 6:45 and 7:40, Atta and Omari, along with Satam al Suqami, Wail al Shehri, and Waleed al Shehri, checked in and boarded American Airlines Flight 11, bound for Los Angeles. The flight was scheduled to depart at 7:45.
-911report/chapter-1.txt:    In another Logan terminal, Shehhi, joined by Fayez Banihammad, Mohand al Shehri, Ahmed al Ghamdi, and Hamza al Ghamdi, checked in for United Airlines Flight 175, also bound for Los Angeles. A couple of Shehhi's colleagues were obviously unused to travel; according to the United ticket agent, they had trouble understanding the standard security questions, and she had to go over them slowly until they gave the routine, reassuring answers.
-911report/chapter-1.txt:    Washington Dulles: American 77. Hundreds of miles southwest of Boston, at Dulles International Airport in the Virginia suburbs of Washington, D.C., five more men were preparing to take their early morning flight. At 7:15, a pair of them, Khalid al Mihdhar and Majed Moqed, checked in at the American Airlines ticket counter for Flight 77, bound for Los Angeles. Within the next 20 minutes, they would be followed by Hani Hanjour and two brothers, Nawaf al Hazmi and Salem al Hazmi.
-911report/chapter-1.txt:    About 20 minutes later, at 7:35, another passenger for Flight 77, Hani Hanjour, placed two carry-on bags on the X-ray belt in the Main Terminal's west checkpoint, and proceeded, without alarm, through the metal detector. A short time later, Nawaf and Salem al Hazmi entered the same checkpoint. Salem al Hazmi cleared the metal detector and was permitted through; Nawaf al Hazmi set off the alarms for both the first and second metal detectors and was then hand-wanded before being passed. In addition, his over-the-shoulder carry-on bag was swiped by an explosive trace detector and then passed. The video footage indicates that he was carrying an unidentified item in his back pocket, clipped to its rim.
-911report/chapter-1.txt:    Newark: United 93. Between 7:03 and 7:39, Saeed al Ghamdi, Ahmed al Nami, Ahmad al Haznawi, and Ziad Jarrah checked in at the United Airlines ticket counter for Flight 93, going to Los Angeles. Two checked bags; two did not. Haznawi was selected by CAPPS. His checked bag was screened for explosives and then loaded on the plane.
-```
-This command searches text files in the directory "911report" for lines containing "Flight" followed by exactly two digits, and displays the first 5 lines found. This can be helpful if we are looking for the specifics going on each flight involved in the 911 attacks.
-
-```$ grep -E "([A-Z][a-z]{2,})-[0-9]{3,}" biomed/*.txt | head -5```
-```
-biomed/1471-2091-2-10.txt:          mAb directly conjugated to Alexa-488 revealed that α3β1
-biomed/1471-2091-2-10.txt:          anti-α4-Alexa-488 mAb revealed a diffuse pattern of
-biomed/1471-2091-2-10.txt:          no Alexa-488-conjugated antibodies were added, no
-biomed/1471-2091-4-1.txt:          Microcon-100 (Amicon). The reaction mixtures were diluted
-biomed/1471-2121-3-8.txt:        sequences are Gly-247, Gly-284 and Cys-450 in our Hyal-1
-```
-This command looks for lines containing patterns like "Name-number" (e.g., "isopropyl-1234") within text files in biomed within the "biomed" directory,  and then displays the first 5 lines found. This can be helpful if we are looking/gathering specific compound names in that format. 
 ### ```-h```
 
-```-h``` surpresses/hides the filenames in the output
+```-h``` surpresses/hides the filenames in the output:
+Source: https://stackoverflow.com/questions/1122218/to-understand-the-practical-use-of-greps-option-h-in-different-situations
 
 ```
 $ grep -r -h "CIA" government | head -10
@@ -184,3 +161,27 @@ It can be useful if we can visualize instances of CIA being mentioned and its ro
 This command searches for the occurrences of the string pattern ```3-2``` of all text files in biomed directory and displays the top 10.
 It can be useful if we can visualize instances of 3-2, which can be a date, being mentioned and its roles/significance in the biomed publication without getting bombarded by a bunch of textfile names.
 
+### ```-E``` 
+
+```-E```  allows you to specify the search pattern you want to find in the text files.
+Source: https://www.cyberciti.biz/faq/grep-in-bash/
+
+```$ grep -E "Flight [0-9]{2}" 911report/*.txt | head -5```
+```
+911report/chapter-1.txt:    Between 6:45 and 7:40, Atta and Omari, along with Satam al Suqami, Wail al Shehri, and Waleed al Shehri, checked in and boarded American Airlines Flight 11, bound for Los Angeles. The flight was scheduled to depart at 7:45.
+911report/chapter-1.txt:    In another Logan terminal, Shehhi, joined by Fayez Banihammad, Mohand al Shehri, Ahmed al Ghamdi, and Hamza al Ghamdi, checked in for United Airlines Flight 175, also bound for Los Angeles. A couple of Shehhi's colleagues were obviously unused to travel; according to the United ticket agent, they had trouble understanding the standard security questions, and she had to go over them slowly until they gave the routine, reassuring answers.
+911report/chapter-1.txt:    Washington Dulles: American 77. Hundreds of miles southwest of Boston, at Dulles International Airport in the Virginia suburbs of Washington, D.C., five more men were preparing to take their early morning flight. At 7:15, a pair of them, Khalid al Mihdhar and Majed Moqed, checked in at the American Airlines ticket counter for Flight 77, bound for Los Angeles. Within the next 20 minutes, they would be followed by Hani Hanjour and two brothers, Nawaf al Hazmi and Salem al Hazmi.
+911report/chapter-1.txt:    About 20 minutes later, at 7:35, another passenger for Flight 77, Hani Hanjour, placed two carry-on bags on the X-ray belt in the Main Terminal's west checkpoint, and proceeded, without alarm, through the metal detector. A short time later, Nawaf and Salem al Hazmi entered the same checkpoint. Salem al Hazmi cleared the metal detector and was permitted through; Nawaf al Hazmi set off the alarms for both the first and second metal detectors and was then hand-wanded before being passed. In addition, his over-the-shoulder carry-on bag was swiped by an explosive trace detector and then passed. The video footage indicates that he was carrying an unidentified item in his back pocket, clipped to its rim.
+911report/chapter-1.txt:    Newark: United 93. Between 7:03 and 7:39, Saeed al Ghamdi, Ahmed al Nami, Ahmad al Haznawi, and Ziad Jarrah checked in at the United Airlines ticket counter for Flight 93, going to Los Angeles. Two checked bags; two did not. Haznawi was selected by CAPPS. His checked bag was screened for explosives and then loaded on the plane.
+```
+This command searches text files in the directory "911report" for lines containing "Flight" followed by exactly two digits, and displays the first 5 lines found. This can be helpful if we are looking for the specifics going on each flight involved in the 911 attacks.
+
+```$ grep -E "([A-Z][a-z]{2,})-[0-9]{3,}" biomed/*.txt | head -5```
+```
+biomed/1471-2091-2-10.txt:          mAb directly conjugated to Alexa-488 revealed that α3β1
+biomed/1471-2091-2-10.txt:          anti-α4-Alexa-488 mAb revealed a diffuse pattern of
+biomed/1471-2091-2-10.txt:          no Alexa-488-conjugated antibodies were added, no
+biomed/1471-2091-4-1.txt:          Microcon-100 (Amicon). The reaction mixtures were diluted
+biomed/1471-2121-3-8.txt:        sequences are Gly-247, Gly-284 and Cys-450 in our Hyal-1
+```
+This command looks for lines containing patterns like "Name-number" (e.g., "isopropyl-1234") within text files in biomed within the "biomed" directory,  and then displays the first 5 lines found. This can be helpful if we are looking/gathering specific compound names in that format. 
