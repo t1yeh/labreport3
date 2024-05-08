@@ -7,20 +7,21 @@ Source: https://phoenixnap.com/kb/grep-command-linux-unix-examples
 
 
 ```
-$ grep -w 'amylase' biomed/*.txt | head -10
+$ grep -w 'microscopic' biomed/*.txt | head -10
 ```
 ```
-biomed/1471-2229-2-3.txt:        generated off an α amylase gene exhibit differential
-biomed/1471-2229-2-4.txt:        metabolism, the regulation of alpha-amylase activity has
-biomed/1471-2229-2-4.txt:        regulation of alpha-amylase expression [ 26 ] . Sugar
-biomed/1471-2229-2-4.txt:        regulation of alpha-amylase expression has also been shown
-biomed/1471-2229-2-4.txt:        alpha-amylase transcript levels [ 24 25 ] , but also mRNA
-biomed/1471-2229-2-4.txt:        signaling pathways in the control of alpha-amylase
-biomed/1471-2229-2-4.txt:        gibberellin-dependent pathway for alpha-amylase expression
-biomed/1471-2229-2-4.txt:        a role in sugar repression of alpha-amylase activity. This
-biomed/1471-2229-2-4.txt:        alpha-amylase expression [ 37 ] . However, the role of
-biomed/1471-2229-2-4.txt:        genes encoding patatin [ 41 ] , beta-amylase [ 42 43 ] ,
+biomed/1471-2105-3-26.txt:        traditionally based on microscopic appearance. Although
+biomed/1471-2121-2-1.txt:          representative microscopic field were counted and the
+biomed/1471-2121-2-10.txt:        are lost during specimen preparation for microscopic
+biomed/1471-2121-2-10.txt:          cytoskeletal filaments for electron microscopic imaging.
+biomed/1471-2121-2-15.txt:          examined the gross and microscopic appearance of skin
+biomed/1471-2121-2-3.txt:        microscopic sections were evaluated with quantitative
+biomed/1471-2121-3-19.txt:          observed via immunofluorescent microscopic observation of
+biomed/1471-2121-3-21.txt:          microscopic images. Thirty-two fluorescence video images
+biomed/1471-2121-3-4.txt:          For microscopic observation, cells were plated in
+biomed/1471-2121-3-6.txt:          fluorescence microscopic observation immediately before
 ```
+This command searches for "amylase" as a complete word in text files of the biomed directory (.txt) and shows the first 10 lines. This can be helpful if we are looking for a specific biological compound.(lots of bio terminology uses word componding like Pneumonoultra```microscopic```silicovolcanoconiosis)
 
 ```
 grep -w 'process' 911report/*.txt | head -10
@@ -37,7 +38,7 @@ grep -w 'process' 911report/*.txt | head -10
 911report/chapter-12.txt:                    that process.
 911report/chapter-12.txt:                strategies to promote the Middle East peace process. In each country, political
 ```
-
+This command searches for the word "process" used in the text files of 911report and displays first 10 lines. This can be helpful if we are looking at certainn technical terms where it can also be conjugated, especially in analytical documents such as reports.
 
 ### ```-A```
 
