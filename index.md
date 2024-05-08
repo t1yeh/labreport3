@@ -1,4 +1,7 @@
-2. ##
+## 2. 
+
+
+
 ```$ grep -v '[a-zA-z]' biomed/*.txt | head -10```
 ```
 
@@ -18,6 +21,10 @@
 911report/chapter-1.txt:INSIDE THE FOUR FLIGHTS
 ```
 
+### ```-A```
+
+'''-A #''' finds the # of lines after a certain pattern
+
 ```$ grep -A 2 "police" 911report/*.txt | head -5```
 ```
 911report/chapter-10.txt:                of a military police lead vehicle and a van; the proposed briefing theater had no
@@ -26,6 +33,9 @@
 --
 911report/chapter-11.txt:                officials-local airport managers and local police departments- who had not seen such
 ```
+This command searches for the word "police", and displays the line containing "police" along with the two lines following it in all files ending in .txt within the 911report directory, and showing the first 5 results. This can be useful if we are looking at the context before the usage of police in the 911reports
+
+
 ```$ grep -A 1 "CIA" 911report/*.txt | head -5```
 ```
 911report/chapter-1.txt:    At the White House, the video teleconference was conducted from the Situation Room by Richard Clarke, a special assistant to the president long involved in counterterrorism. Logs indicate that it began at 9:25 and included the CIA; the FBI; the departments of State, Justice, and Defense; the FAA; and the White House shelter. The FAA and CIA joined at 9:40. The first topic addressed in the White House video teleconference-at about 9:40-was the physical security of the President, the White House, and federal agencies. Immediately thereafter it was reported that a plane had hit the Pentagon. We found no evidence that video teleconference participants had any prior information that American 77 had been hijacked and was heading directly toward Washington. Indeed, it is not clear to us that the video teleconference was fully under way before 9:37, when the Pentagon was struck.
@@ -34,6 +44,7 @@
 911report/chapter-10.txt:                proposed inserting CIA teams into Afghanistan to work with Afghan warlords who would
 911report/chapter-10.txt:                join the fight against al Qaeda.46These CIA teams would act jointly with the
 ```
+This command searches for the term "CIA" in all txt files in the 911report directory, shows the line containing "CIA" and the line following it, and displays only the first 5 results. This can be helpful if we are also looking at the direct context before CIA being mentioned in the 911attacks
 
 ### ```-E```
 ```-E```  allows you to specify the search pattern you want to find in the text files.
