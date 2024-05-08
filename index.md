@@ -58,8 +58,13 @@ biomed/1471-2121-3-8.txt:        sequences are Gly-247, Gly-284 and Cys-450 in o
 ```
 22786     1
 ```
+22786: This represents the total number of lines containing the text "CIA" found across all files within the directory named "government" (and potentially its subdirectories, due to the -r flag).
+1: This number indicates that there's only one directory that contains at least one file with a match for "CIA".
+
+
 ```$ grep -hc "3-2" biomed/*.txt | sum```
 ```
 32610     2
 ```
-
+32610: The total number of lines containing the search pattern ("3-2") across all files in the specified directory.
+2: This could be the number of files that actually contain at least one instance of the pattern.
